@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -15,27 +14,33 @@ class App extends Component {
   }
 
   ComponentDidMount() {
-    //const apiKey = 'b030f32c6a69418ca8fd984a5040d8b5';
-    //const url = `https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL/${apiKey}`;
-    const url = 'https://api.darksky.net/forecast/ad38988aa88b4261594ade3c95519e5a/37.8267,-122.4233';
+    const apiKey = '00be38b05fb4464c81e2a008d4b4e792';
+    //const url = `https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key={apiKey}`;
+    const url = 'https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key=' + apiKey;
+    //const url = 'https://api.darksky.net/forecast/ad38988aa88b4261594ade3c95519e5a/37.8267,-122.4233';
 
-    fetch(url, {
+    console.log(apiKey)
+    this.setState({
+      website: 'ayo.com'
+    })
+    /*fetch(url, {
       method: "GET",
       body: JSON.stringify(),
       headers: {
         "Content-Type": "application/json"
       }
-    })
-    .then(result => result.json())
-    .then(result => this.setState({
-      name: result
+    })*/
+    fetch(url)
+    .then(response => response.json())
+    .then(data => this.setState({
+      name: 'ayo'
     }))
   }
 
   render() {
     return (
       <div>
-        <p></p>
+        <p>{this.state.name}, {this.state.website}</p>
       </div>
     );
   }
