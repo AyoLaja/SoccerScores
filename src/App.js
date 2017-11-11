@@ -9,12 +9,22 @@ class App extends Component {
       venueName: 'none',
       founded: 'none',
       website: 'none',
-      nickname: 'none'
+      nickname: 'none',
+      people: []
     }
   }
 
+  getData() {
+    //fetch('https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key=00be38b05fb4464c81e2a008d4b4e792')
+    fetch('https://randomuser.me/api/?results=20')
+    .then(response => response.json())
+    .then(data => this.setState({
+      people: data.results
+    }))
+  }
+
   ComponentDidMount() {
-    const apiKey = '00be38b05fb4464c81e2a008d4b4e792';
+    /*const apiKey = '00be38b05fb4464c81e2a008d4b4e792';
     //const url = `https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key={apiKey}`;
     const url = 'https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key=' + apiKey;
 
@@ -22,22 +32,25 @@ class App extends Component {
     .then(response => response.json())
     .then(data => this.setState({
       name: 'ayo'
-    }))
+    }))*/
+
+    this.getData();
   }
 
-  getData() {
-    fetch('https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key=00be38b05fb4464c81e2a008d4b4e792')
-    .then(response => response.json())
-    .then(data => this.setState({
-      founded: data.Teams[0].Phone
-    }))
-  }
+
 
   render() {
+    this.getData();
+
     return (
       <div>
-      <p>{this.getData()}</p>
-        <p>{this.state.name}, {this.state.website}</p>
+        <ul>
+          {this.state.people.map((item) => {
+            return (
+              <li>{item[0].name}</li>
+            )
+          })}
+        </ul>
       </div>
     );
   }
