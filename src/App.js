@@ -60,12 +60,13 @@ class App extends Component {
           {people.map((person, i) => {
             return (
               <li key={person.name + i}>{person.name}</li>
-              <li key={person.email + i}>{person.email }</li>
+              <li key={person.email + i}>{person.email}</li>
             );
-          })
+          });
+        }
         </ul>
       </div>
-    });
+    );
   }
 }
 
