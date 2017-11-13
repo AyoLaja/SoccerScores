@@ -57,15 +57,15 @@ class App extends Component {
     return (
       <div>
         <ul>
-          {this.state.people.map((person) => {
+          {people.map((person, i) => {
             return (
-              <li>{person.name}</li>
-              <li>{person.email}</li>
-            });
-          )
+              <li key={person.name + i}>{person.name}</li>
+              <li key={person.email + i}>{person.email }</li>
+            );
+          })
         </ul>
       </div>
-    );
+    });
   }
 }
 
