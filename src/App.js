@@ -5,14 +5,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'none',
-      venueName: 'none',
-      founded: 'none',
-      website: 'none',
-      nickname: 'none',
-      people: [],
-      strings: []
+      people: []
     }
+
+    this.getData = this.getData.bind(this);
   }
 
   getData() {
@@ -26,9 +22,7 @@ class App extends Component {
       return response.json();
     })
     .then(({results}) => {
-      this.setState({
-        people: results
-      })
+      return results;
     })
     .catch(error => {
       console.log(error);
@@ -37,7 +31,7 @@ class App extends Component {
     return promise;
   }
 
-  ComponenWillMount() {
+  ComponenDidMount() {
     /*const apiKey = '00be38b05fb4464c81e2a008d4b4e792';
     //const url = `https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key={apiKey}`;
     const url = 'https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key=' + apiKey;
@@ -48,23 +42,18 @@ class App extends Component {
       name: 'ayo'
     }))*/
 
-    this.getData();
+    this.getData()
+      .then(data => {
+        this.setState({
+          people: data
+        });
+      });
   }
 
   render() {
-    this.getData();
-
     return (
       <div>
-        <ul>
-          {people.map((person, i) => {
-            return (
-              <li key={person.name + i}>{person.name}</li>
-              <li key={person.email + i}>{person.email}</li>
-            );
-          });
-        }
-        </ul>
+        <p>{this.state.people.results[0].gender}</p>
       </div>
     );
   }
