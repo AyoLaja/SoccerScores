@@ -9,7 +9,6 @@ class App extends Component {
     }
 
     this.getData = this.getData.bind(this);
-    this.displayData = this.displayData.bind(this);
   }
 
   getData() {
@@ -42,13 +41,6 @@ class App extends Component {
     const url = 'https://api.fantasydata.net/v3/soccer/scores/json/CompetitionDetails/EPL?subscription-key=' + apiKey;*/
 
     this.getData()
-    this.displayData()
-  }
-
-  displayData() {
-    let randomUsers = this.state.people.email;
-    let userEmails = randomUsers.map((randomuser) =>
-      <li>{randomuser}</li>);
   }
 
   render() {
@@ -56,8 +48,10 @@ class App extends Component {
     if(!this.state.people) return <p>Loading...</p>
     return (
       <div>
-        <p>{this.state.people[0].email}</p>
-        <ul>{displayData()}</ul>
+        <ul>{this.state.people.map((user) =>
+              <li key={user.email}>{user.login.username} - {user.name.first} {user.name.last}</li>
+            )}
+        </ul>
       </div>
     );
   }
