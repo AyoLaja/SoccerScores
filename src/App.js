@@ -7,16 +7,15 @@ class App extends Component {
   //   //fetch('https://api.fantasydata.net/v3/soccer/stats/json/PlayersByTeam/509?subscription-key=00be38b05fb4464c81e2a008d4b4e792')
   //
   //}
-
-  getData() {
-    console.log(players);
-  }
+  //
+  // getData() {
+  //   console.log(players);
+  // }
 
   render() {
     return(
       <div className="container">
         <h1>Arsenal Players</h1>
-        {this.getData()}
         <ul className="player-list">
           {
             players.map((players) => {
