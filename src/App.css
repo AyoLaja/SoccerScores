@@ -8,7 +8,7 @@
 body, html {
   font-family: 'Lato', sans-serif;
   background-color: #EC0C1C;
-
+  color: #fff;
 }
 
 h1 {
@@ -22,6 +22,7 @@ h1 {
 .container {
   font-family: 'Lato', sans-serif;
   text-align: center;
+  font-size: 12px;
 }
 
 .player-list {
@@ -38,13 +39,44 @@ h1 {
   margin: 20px;
   text-align: left;
   padding: 10px;
+  border-radius: 0px;
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s;
+}
+
+.list-element:hover {
+  box-shadow: 0 10px 50px 5px #bf0715;
 }
 
 .img-container {
-  padding: 20px;
-  border: 5px solid #fff;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.player-image {
   border-radius: 50%;
-  text-align: center !important;
-  height: auto;
-  width: auto;
+  padding: 5px;
+  border: 5px solid #fff;
+  border-top: 5px solid red;
+}
+
+.player-name {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+label {
+  font-weight: bold;
+  margin: 2px;
+}
+
+.deets {
+  font-weight: normal;
+}
+
+hr {
+  margin: 20px;
+  border: 1px solid #fff;
+  background-color: #fff;
 }

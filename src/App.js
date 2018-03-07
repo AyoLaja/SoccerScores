@@ -22,11 +22,19 @@ class App extends Component {
             players.map((players) => {
               return (
                 <li className="list-element">
-                {players.CommonName} <br/>
-                <span className="img-container"><img src={players.PhotoUrl}/></span><br/>
-                <span>{players.Nationality}</span><br/>
-                <span>{players.Jersey}</span><br/>
-                <span>{players.Position}</span><br/>
+                <div>
+                  <span className="player-name">{players.CommonName}</span> <br/>
+                  <div className="img-container">
+                    <span className="player-image"><img src={players.PhotoUrl}/></span><br/>
+                  </div>
+                  <hr/>
+                  <div>
+                    <label>Nationality: <span className="player-nationality deets">{players.Nationality}</span></label>
+                    <label>Jersey No: <span className="player-jersey deets">{players.Jersey}</span></label><br/>
+                    <label>Position: <span className="player-position deets">{players.Position}</span></label>
+                    <label>Foot: <span className="player-position deets">{players.Foot}</span></label><br/>
+                  </div>
+                </div>
                 </li>
               );
             })
