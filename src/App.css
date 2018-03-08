@@ -1,8 +1,8 @@
 * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body, html {
@@ -19,28 +19,33 @@ h1 {
   font-weight: normal;
 }
 
+.logo-container {
+  transform: scale(0.5);
+}
+
 .container {
   font-family: 'Lato', sans-serif;
   text-align: center;
   font-size: 12px;
+  margin: 20px auto;
 }
 
-.player-list {
+/* .player-list {
   display: inline;
   display: block;
-}
+} */
 
 .list-element {
   background-color: #D80919;
   list-style: none;
-  height: 250px;
-  width: 250px;
+  height: 260px;
+  width: 280px;
   display: inline-block;
   margin: 20px;
   text-align: left;
   padding: 10px;
   border-radius: 0px;
-  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s;
 }
 
@@ -58,12 +63,19 @@ h1 {
   padding: 5px;
   border: 5px solid #fff;
   border-top: 5px solid red;
+  width: 80px;
+  height: 30px;
+  margin: -15px auto;
 }
 
 .player-name {
   font-weight: bold;
   font-size: 14px;
   letter-spacing: 1px;
+}
+
+.player-nationality {
+  text-transform: uppercase;
 }
 
 label {
@@ -73,6 +85,7 @@ label {
 
 .deets {
   font-weight: normal;
+  color: #e8e8e8;
 }
 
 hr {
@@ -80,3 +93,5 @@ hr {
   border: 1px solid #fff;
   background-color: #fff;
 }
+
+.btn-chooseteam {}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import players from './arsenalPlayer.json';
+import ChooseTeam from './ChooseTeam';
+import { Button, Grid, Row, Col } from 'react-bootstrap'; 
 
 class App extends Component {
   // getData() {
@@ -15,25 +17,52 @@ class App extends Component {
   render() {
     return(
       <div className="container">
-        <h1>Arsenal Players</h1>
+        <div className="logo-container">
+          <img src="https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/5\/53\/Arsenal_FC.svg\/200px-Arsenal_FC.svg.png" />
+        </div>
+        <Row className="text-left">
+          <Col xs={12} md={12}>
+            <ChooseTeam/>
+          </Col>
+        </Row>
         <ul className="player-list">
           {
             players.map((players) => {
               return (
                 <li className="list-element">
-                <div>
-                  <span className="player-name">{players.CommonName}</span> <br/>
-                  <div className="img-container">
-                    <span className="player-image"><img src={players.PhotoUrl}/></span><br/>
-                  </div>
-                  <hr/>
                   <div>
-                    <label>Nationality: <span className="player-nationality deets">{players.Nationality}</span></label>
-                    <label>Jersey No: <span className="player-jersey deets">{players.Jersey}</span></label><br/>
-                    <label>Position: <span className="player-position deets">{players.Position}</span></label>
-                    <label>Foot: <span className="player-position deets">{players.Foot}</span></label><br/>
+                    <Row>
+                      <Col xs={12} md={12}>
+                        <span className="player-name">{players.CommonName}</span>
+                      </Col>
+                    </Row>
+                    <br/>
+                    <Row>
+                      <Col>
+                        <div className="img-container">
+                          <img src={players.PhotoUrl}/>
+                          <div className="player-image"></div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <hr/>
+                    <Row>
+                      <Col xs={6} md={6}>
+                        <label>Nationality: <span className="player-nationality deets">{players.Nationality.split("", 3)}</span></label>
+                      </Col>
+                      <Col xs={6} md={6}>
+                        <label>Jersey No: <span className="player-jersey deets">{players.Jersey}</span></label>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} md={6}>
+                        <label>Position: <span className="player-position deets">{players.Position}</span></label>
+                      </Col>
+                      <Col xs={6} md={6}>
+                        <label>Foot: <span className="player-position deets">{players.Foot}</span></label>
+                      </Col>
+                    </Row>
                   </div>
-                </div>
                 </li>
               );
             })
