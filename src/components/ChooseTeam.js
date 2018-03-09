@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ButtonMcfc from './ButtonMcfc';
 import ButtonMufc from './ButtonMufc';
 import ButtonChelsea from './ButtonChelsea';

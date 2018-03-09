@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import players from './arsenalPlayer.json';
 import ChooseTeam from './components/ChooseTeam';
-import { Button, Grid, Row, Col } from 'react-bootstrap'; 
+import { Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   // getData() {
@@ -23,7 +23,7 @@ class App extends Component {
     return(
       <div className="container">
         <div className="logo-container">
-          <img src="https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/5\/53\/Arsenal_FC.svg\/200px-Arsenal_FC.svg.png"/>
+          <img alt="Club Crest" src="https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/5\/53\/Arsenal_FC.svg\/200px-Arsenal_FC.svg.png"/>
         </div>
         <Row className="text-left">
           <Col xs={12} md={12}>
@@ -34,7 +34,7 @@ class App extends Component {
           {
             players.map((players) => {
               return (
-                <li className="list-element">
+                <li className="list-element" key={players.PlayerId}>
                   <div>
                     <Row>
                       <Col xs={8} md={8} className="fixed-top">
@@ -48,7 +48,7 @@ class App extends Component {
                     <Row>
                       <Col>
                         <div className="img-container">
-                          <img src={players.PhotoUrl}/>
+                          <img alt="Player Phtoto" src={players.PhotoUrl}/>
                           <div className="player-image"></div>
                         </div>
                       </Col>

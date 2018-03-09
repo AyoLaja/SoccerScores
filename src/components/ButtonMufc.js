@@ -4,7 +4,7 @@ import '../App.css';
 const ButtonMufc = () => {
   return(
     <button className="btn-team mufc">
-      <img src="https://png.icons8.com/color/50/000000/manchester-united-fc.png"/>
+      <img alt="Club Crest" src="https://png.icons8.com/color/50/000000/manchester-united-fc.png"/>
     </button>
   );
 }
