@@ -6,18 +6,8 @@ import { Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   // getData() {
-  //   //fetch('https://api.fantasydata.net/v3/soccer/stats/json/PlayersByTeam/509?subscription-key=00be38b05fb4464c81e2a008d4b4e792')
-  //
+  //   //fetch('https://api.fantasydata.net/v3/soccer/stats/json/PlayersByTeam/509?subscription-key=xxxxxxxxx')
   //}
-  //
-  // getData() {
-  //   console.log(players);
-  // }
-  // chelsea 511 = https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/c\/cc\/Chelsea_FC.svg\/209px-Chelsea_FC.svg.png
-  // liverpool 515= https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/0\/0c\/Liverpool_FC.svg\/370px-Liverpool_FC.svg.png
-  // city 516= https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/e\/eb\/Manchester_City_FC_badge.svg\/410px-Manchester_City_FC_badge.svg.png
-  // United 517 = https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/7\/7a\/Manchester_United_FC_crest.svg\/296px-Manchester_United_FC_crest.svg.png
-  // Tottenham 524 = https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/b\/b4\/Tottenham_Hotspur.svg\/321px-Tottenham_Hotspur.svg.png
 
   render() {
     return(
@@ -25,52 +15,69 @@ class App extends Component {
         <div className="logo-container">
           <img alt="Club Crest" src="https:\/\/upload.wikimedia.org\/wikipedia\/en\/thumb\/5\/53\/Arsenal_FC.svg\/200px-Arsenal_FC.svg.png"/>
         </div>
-        <Row className="text-left">
-          <Col xs={12} md={12}>
+        <Row>
+          <Col xs={2} md={2}>
             <ChooseTeam/>
           </Col>
+          <Col xs={8} md={8} className="text-left">
+            <Row>
+              <Col className="text-left">
+                <h3>Players</h3>
+              </Col>
+            </Row>
+            <ul className="player-list">
+              {
+                players.map((players) => {
+                  return (
+                    <li className="list-element" key={players.PlayerId}>
+                      <div>
+                        <Row>
+                          <Col xs={8} md={8} className="fixed-top">
+                            <span className="player-name">{players.CommonName}</span>
+                          </Col>
+                          <Col xs={4} md={4} className="text-right fixed-top">
+                            <span className="player-jersey deets">{players.Jersey}</span>
+                          </Col>
+                        </Row>
+                        <br/>
+                        <Row>
+                          <Col>
+                            <div className="img-container">
+                              <img alt="Player Phtoto" src={players.PhotoUrl}/>
+                              <div className="player-image"></div>
+                            </div>
+                          </Col>
+                        </Row>
+                        <hr/>
+                        <Row className="text-center">
+                          <Col xs={4} md={4}>
+                            <label>Nat: </label><br/><span className="player-nationality deets">{players.Nationality.split("", 3)}</span>
+                          </Col>
+                          <Col xs={4} md={4}>
+                            <label>Position: </label><br/><span className="player-position deets">{players.Position}</span>
+                          </Col>
+                          <Col xs={4} md={4}>
+                            <label>Foot: </label><br/><span className="player-position deets">{players.Foot.split("", 1)}</span>
+                          </Col>
+                        </Row>
+                      </div>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </Col>
+          <Col xs={2} md={2}>
+            <Row>
+              <Col md={12} className="text-left">
+                <h3>Fixtures</h3>
+              </Col>
+            </Row>
+            <Row>
+
+            </Row>
+          </Col>
         </Row>
-        <ul className="player-list">
-          {
-            players.map((players) => {
-              return (
-                <li className="list-element" key={players.PlayerId}>
-                  <div>
-                    <Row>
-                      <Col xs={8} md={8} className="fixed-top">
-                        <span className="player-name">{players.CommonName}</span>
-                      </Col>
-                      <Col xs={4} md={4} className="text-right fixed-top">
-                        <span className="player-jersey deets">{players.Jersey}</span>
-                      </Col>
-                    </Row>
-                    <br/>
-                    <Row>
-                      <Col>
-                        <div className="img-container">
-                          <img alt="Player Phtoto" src={players.PhotoUrl}/>
-                          <div className="player-image"></div>
-                        </div>
-                      </Col>
-                    </Row>
-                    <hr/>
-                    <Row className="text-center">
-                      <Col xs={4} md={4}>
-                        <label>Nat: </label><br/><span className="player-nationality deets">{players.Nationality.split("", 3)}</span>
-                      </Col>
-                      <Col xs={4} md={4}>
-                        <label>Position: </label><br/><span className="player-position deets">{players.Position}</span>
-                      </Col>
-                      <Col xs={4} md={4}>
-                        <label>Foot: </label><br/><span className="player-position deets">{players.Foot.split("", 1)}</span>
-                      </Col>
-                    </Row>
-                  </div>
-                </li>
-              );
-            })
-          }
-        </ul>
       </div>
     )};
 }
