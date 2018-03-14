@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import players from './arsenalPlayer.json';
+import players from './jsons/arsenalPlayer.json';
 import ChooseTeam from './components/ChooseTeam';
 import { Row, Col } from 'react-bootstrap';
 
@@ -19,7 +19,7 @@ class App extends Component {
           <Col xs={2} md={2}>
             <ChooseTeam/>
           </Col>
-          <Col xs={8} md={8} className="text-left">
+          <Col xs={7} md={7} className="text-left">
             <Row>
               <Col className="text-left">
                 <h3>Players</h3>
@@ -27,7 +27,7 @@ class App extends Component {
             </Row>
             <ul className="player-list">
               {
-                players.map((players) => {
+                players.Names.map((players) => {
                   return (
                     <li className="list-element" key={players.PlayerId}>
                       <div>
@@ -43,7 +43,7 @@ class App extends Component {
                         <Row>
                           <Col>
                             <div className="img-container">
-                              <img alt="Player Phtoto" src={players.PhotoUrl}/>
+                              <img alt="Player Photo" src={players.PhotoUrl}/>
                               <div className="player-image"></div>
                             </div>
                           </Col>
@@ -67,14 +67,19 @@ class App extends Component {
               }
             </ul>
           </Col>
-          <Col xs={2} md={2}>
+          <Col xs={3} md={3}>
             <Row>
               <Col md={12} className="text-left">
-                <h3>Fixtures</h3>
+                <h3>Results & Fixtures</h3>
               </Col>
             </Row>
             <Row>
+              <div className="fixtures-container">
+                <ul className="results-list">
+                {players.Game.Day}.toLocaleString()
 
+                </ul>
+              </div>
             </Row>
           </Col>
         </Row>

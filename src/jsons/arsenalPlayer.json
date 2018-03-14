@@ -1,5 +1,7 @@
-[
-   {
+
+  {
+   "Names": [
+     {
       "PlayerId":90026263,
       "FirstName":"Per",
       "LastName":"Mertesacker",
@@ -857,4 +859,45 @@
       "RotoWirePlayerID":17166,
       "DraftKingsPosition":"F"
    }
-]
+ ],
+    "Game": {
+      "GameId": 11830,
+      "RoundId": 144,
+      "Season": 2018,
+      "SeasonType": 1,
+      "Group": null,
+      "AwayTeamId": 509,
+      "HomeTeamId": 1116,
+      "VenueId": 220,
+      "Day": "2018-03-04T00:00:00",
+      "DateTime": "2018-03-04T13:30:00",
+      "Status": "Final",
+      "Week": 29,
+      "Period": "Regular",
+      "Clock": null,
+      "Winner": "Scrambled",
+      "VenueType": "Home Away",
+      "AwayTeamKey": "ARS",
+      "AwayTeamName": "Arsenal FC",
+      "AwayTeamCountryCode": "ENG",
+      "AwayTeamScore": 1,
+      "AwayTeamScorePeriod1": 1,
+      "AwayTeamScorePeriod2": 0,
+      "AwayTeamScoreExtraTime": null,
+      "AwayTeamScorePenalty": null,
+      "HomeTeamKey": "BHA",
+      "HomeTeamName": "Brighton & Hove Albion FC",
+      "HomeTeamCountryCode": "ENG",
+      "HomeTeamScore": 2,
+      "HomeTeamScorePeriod1": 2,
+      "HomeTeamScorePeriod2": 0,
+      "HomeTeamScoreExtraTime": null,
+      "HomeTeamScorePenalty": null,
+      "Attendance": 30620,
+      "Updated": "2018-03-04T10:28:48",
+      "UpdatedUtc": "2018-03-04T15:28:48",
+      "GlobalGameId": 90011830,
+      "GlobalAwayTeamId": 90000509,
+      "GlobalHomeTeamId": 90001116
+    }
+  }
