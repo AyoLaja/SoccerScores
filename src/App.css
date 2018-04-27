@@ -40,7 +40,7 @@ h3 {
   background-color: #D80919;
   list-style: none;
   height: auto;
-  width: 250px;
+  width: 230px;
   display: inline-block;
   margin: 20px;
   text-align: left;
@@ -85,8 +85,11 @@ h3 {
 }
 
 .player-jersey {
+  position: absolute;
   font-size: 40px;
-  display: contents;
+  /* display: contents; */
+  margin-top: -30px;
+  margin-left: -2 5px;
   color: #e8e8e8
 }
 
@@ -170,4 +173,8 @@ hr {
 .fixtures-container:hover {
   -webkit-box-shadow: 0 10px 50px 5px #bf0715;
   box-shadow: 0 10px 50px 5px #bf0715;
+}
+
+.game-opponents {
+  font-size: 40px;
 }

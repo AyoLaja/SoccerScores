@@ -19,7 +19,7 @@ class App extends Component {
           <Col xs={2} md={2}>
             <ChooseTeam/>
           </Col>
-          <Col xs={7} md={7} className="text-left">
+          <Col xs={7} md={7}>
             <Row>
               <Col className="text-left">
                 <h3>Players</h3>
@@ -68,17 +68,24 @@ class App extends Component {
             </ul>
           </Col>
           <Col xs={3} md={3}>
-            <Row>
-              <Col md={12} className="text-left">
+            <Row className="text-left">
+              <Col md={12}>
                 <h3>Results & Fixtures</h3>
               </Col>
             </Row>
             <Row>
               <div className="fixtures-container">
-                <ul className="results-list">
-                {players.Game.Day}.toLocaleString()
-
-                </ul>
+                <Row className="text-left">
+                  <Col xs={12} md={12}>
+                    <span className="game-date deets">{players.Game.Day}</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12} md={12}>
+                    <span className="game-opponents deets">{players.Game.AwayTeamKey} @{players.Game.HomeTeamKey}</span><br/>
+                    <span className="game-scores deets">{players.Game.AwayTeamScore} - {players.Game.HomeTeamScore}</span>
+                  </Col>
+                </Row>
               </div>
             </Row>
           </Col>
