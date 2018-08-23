@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "hoek": "^5.0.4",
+    "lodash": "^4.17.10",
     "react": "^16.0.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "sshpk": "^1.14.2",
+    "url-parse": "^1.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
